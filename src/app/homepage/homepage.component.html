@@ -1,0 +1,148 @@
+<div class="mainBackground">
+  <div class="mainbody">
+    <div class="headerDiv">
+      <div class="logoDiv">
+        <img src="../../assets/images/NRlogo.svg" alt="" />
+      </div>
+      <div class="buttonsDiv">
+        <div
+          class="headerButton"
+          *ngFor="let item of headerButtons; let i = index"
+          [class.active]="selectedIndex == i"
+          (click)="setActiveClass(i)"
+        >
+          <a href="{{ item.linkName }}">{{ item.name }}</a>
+        </div>
+        <!-- <div class="headerButton hirebtn">Hire me!</div> -->
+      </div>
+    </div>
+    <div class="bodyDiv">
+      <div class="infoAndImgDiv">
+        <div class="slider">
+          <div class="slide infoDiv">
+            <div class="info1">
+              <div class="nameDiv">Hi, I'm Nishanth</div>
+              <div class="roleDiv">UI/UX Designer</div>
+              <div class="objectiveDiv">
+                I dissect intricate user experience challenges to craft
+                integrity-centered solutions that resonate with billions of user
+              </div>
+              <div class="redirectBtns">
+                <div class="cvBtn">
+                  <div class="btnText">Download CV</div>
+                  <div class="btnIcon">
+                    <img src="../../assets/images/downloadCV.svg" alt="" />
+                  </div>
+                </div>
+                <div class="redirectBtn">
+                  <img src="../../assets/images/Twitter.svg" alt="" />
+                </div>
+                <div class="redirectBtn">
+                  <img src="../../assets/images/Instagram.svg" alt="" />
+                </div>
+                <div class="redirectBtn">
+                  <img src="../../assets/images/Linkedin.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="info2">
+              <div class="experienceBox">
+                <div class="numberDiv">3</div>
+                <div class="textDiv">Years of Experience</div>
+              </div>
+              <div class="experienceBox">
+                <div class="numberDiv">10 +</div>
+                <div class="textDiv">Projects Completed</div>
+              </div>
+            </div>
+          </div>
+          <div id="myworks" class="slide myworksDiv">
+            <div class="slideHead">My Works</div>
+            <div class="slideInfoDiv">
+              We transform your ideas and desires into a distinctive web project
+              that inspires both you and your customers.
+            </div>
+            <div class="slideContentDiv myworksDiv">
+              <div class="projectCard" *ngFor="let i of projectArray">
+                <div class="projectImg">
+                  <div class="projectImgInner">
+                    <div class="projectURL">
+                      Project
+                      <img
+                        src="../../assets/images/arrow-up-right 1.svg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="myexp" class="slide myexpDiv">
+            <div class="slideHead">My Experience</div>
+            <div class="slideContentDiv myexpDiv">
+              <div class="expItem" *ngFor="let item of experienceArray">
+                <div class="buttonDiv"></div>
+                <div class="expDiv">
+                  <div class="expDate">
+                    {{ item.dateFrom }} - {{ item.dateTo }}
+                  </div>
+                  <div class="expRole">{{ item.expRole }}</div>
+                  <div class="expCompAndLoc">
+                    {{ item.company }}, {{ item.location }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="myskills" class="slide myskillsDiv">
+            <div class="slideHead">My Skills</div>
+            <div class="slideInfoDiv">
+              We put your ideas and thus your wishes in the form of a unique web
+              project that inspires you and you customers.
+            </div>
+            <div class="slideContentDiv myskillsDiv">
+              <div class="skillCard" *ngFor="let i of skillsArray">
+                <div class="skillIcon">
+                  <img src="{{ i.skillIcon }}" alt="" />
+                </div>
+                <div class="skillName">{{ i.skillName }}</div>
+              </div>
+            </div>
+          </div>
+          <div id="contact" class="slide feedbackDiv">
+            <div class="formDiv">
+              <div class="slideHead">Let's work together!</div>
+              <div class="slideInfoDiv">
+                "I create elegantly simple designs through coding and am
+                passionate about my work. It's just that straightforward!"
+              </div>
+              <div class="userInputs">
+                <div class="ui">
+                  <input type="text" placeholder="First name" />
+                </div>
+                <div class="ui">
+                  <input type="text" placeholder="Last name" />
+                </div>
+                <div class="ui">
+                  <input type="email" placeholder="Email address" />
+                </div>
+                <div class="ui">
+                  <input type="phone" placeholder="Phone number" />
+                </div>
+              </div>
+              <div class="ui userMessage">
+                <input type="text" placeholder="Message" />
+              </div>
+              <div class="submitBtn">Send Message</div>
+            </div>
+            <div class="contactsDiv"></div>
+          </div>
+        </div>
+        <div class="imgDiv">
+          <img src="../../assets/images/profilePic.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

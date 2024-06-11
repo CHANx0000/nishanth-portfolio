@@ -1,0 +1,398 @@
+.mainBackground {
+  background-color: #0f0715;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.mainbody {
+  width: 1340px;
+}
+.headerDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 8px 8px 8px;
+  .logoDiv {
+    color: white;
+    img {
+      width: 80px;
+    }
+  }
+  .buttonsDiv {
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    font-family: Sora;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    .headerButton {
+      margin-left: 32px;
+      &.active {
+        color: white;
+        border-bottom: 2px solid;
+        border-image: linear-gradient(269.68deg, #2a1454 0%, #8750f7 100%) 1;
+      }
+      a:-webkit-any-link {
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.bodyDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dddddd;
+  height: calc(100% - 94px);
+  .infoAndImgDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .infoDiv {
+      // width: 700px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      .nameDiv {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 54px;
+        text-align: left;
+        margin-bottom: 1rem;
+      }
+      .roleDiv {
+        font-size: 65px;
+        font-weight: 700;
+        line-height: 81.9px;
+        text-align: left;
+        background: linear-gradient(90deg, #8750f7 0%, #ffffff 100%);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        margin-bottom: 2rem;
+      }
+      .objectiveDiv {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: left;
+        margin-bottom: 2rem;
+      }
+      .redirectBtns {
+        display: flex;
+        align-items: center;
+        .cvBtn {
+          transition: 0.25s;
+          margin-right: 1rem;
+          display: flex;
+          align-items: center;
+          border-radius: 24px;
+          padding: 0 16px;
+          border: #8750f7 solid 1px;
+          height: 42px;
+          width: 140px;
+          position: relative;
+          transition: transform 0.3s;
+          .btnText {
+            margin-right: 8px;
+            color: #8750f7;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 15px;
+            letter-spacing: 1px;
+            text-align: center;
+          }
+
+          .cvBtn:hover {
+            animation: bubble 0.4s ease-out;
+          }
+
+          @keyframes bubble {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.2);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          // &:hover,
+          // &:focus {
+          //   box-shadow: inset 0 0 10em 0;
+          //   background-color: #8750f7;
+          // }
+        }
+        .redirectBtn {
+          margin-right: 1rem;
+          border: #8750f7 solid 1px;
+          align-items: center;
+          display: flex;
+          padding: 12px;
+          border-radius: 50%;
+        }
+      }
+      .info2 {
+        margin-top: 5rem;
+        display: flex;
+        .experienceBox {
+          display: flex;
+          color: #ffffff;
+          align-items: center;
+          .numberDiv {
+            font-size: 65px;
+            font-weight: 800;
+            line-height: 81.9px;
+            text-align: left;
+            margin-right: 12px;
+          }
+          .textDiv {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            text-align: left;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 500px;
+  width: 680px;
+  .slide {
+    height: 800px;
+    width: 650px;
+    .slideHead {
+      background: linear-gradient(90deg, #8750f7 0%, #ffffff 100%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 54px;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    .slideInfoDiv {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 1rem;
+    }
+
+    .slideContentDiv.myworksDiv {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      .projectCard {
+        .projectImg {
+          border-style: solid;
+          border-width: 2px;
+          border-image: linear-gradient(
+              126.04deg,
+              #8750f7,
+              rgba(255, 255, 255, 0)
+            )
+            1;
+          margin: 1rem;
+          padding: 1rem;
+          .projectImgInner {
+            background-color: #481010;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            padding-bottom: 1rem;
+            .projectURL {
+              background-color: #8750f7;
+              display: flex;
+              align-items: center;
+              border-radius: 24px;
+              padding: 0 16px;
+              border: #8750f7 solid 1px;
+              height: 42px;
+              width: 140px;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+    .slideContentDiv.myexpDiv {
+      display: flex;
+      flex-direction: column;
+      .expItem {
+        display: flex;
+        margin-bottom: 2rem;
+        align-items: center;
+        .buttonDiv {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          border: 10px solid #8750f7;
+          margin-right: 1rem;
+        }
+        // .buttonDiv::before {
+        //   position: absolute;
+        //   width: 2px;
+        //   background-color: #0f0715;
+        //   content: "";
+        //   top: 0px;
+        //   bottom: 0px;
+        // }
+
+        // .buttonDiv {
+        //   position: relative;
+        //   margin: 0;
+        //   padding-bottom: 1em;
+        //   padding-left: 20px;
+        // }
+        // .buttonDiv:before {
+        //   background-color: #c00;
+        //   width: 2px;
+        //   content: "";
+        //   position: absolute;
+        //   top: 0px;
+        //   bottom: 0px;
+        //   left: 5px;
+        // }
+        // .buttonDiv:first-child:before {
+        //   top: 15px;
+        // }
+        // .buttonDiv:last-child:before {
+        //   height: 6px;
+        // }
+
+        .expDiv {
+          padding: 1rem;
+          border-style: solid;
+          border-width: 1px;
+          border-image: linear-gradient(
+              126.04deg,
+              #8750f7,
+              rgba(255, 255, 255, 0)
+            )
+            1;
+          border-radius: 12px;
+          .expDate {
+            font-size: 20px;
+            font-weight: 400;
+            color: #8750f7;
+          }
+          .expRole {
+            font-size: 25px;
+            font-weight: 700;
+          }
+          .expCompAndLoc {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .slideContentDiv.myskillsDiv {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      .skillCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .skillIcon {
+          border-style: solid;
+          border-width: 2px;
+          border-image: linear-gradient(
+              126.04deg,
+              #8750f7,
+              rgba(255, 255, 255, 0)
+            )
+            1;
+          background: #36204b26;
+          width: 180px;
+          height: 180px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 16px;
+        }
+        .skillName {
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+    }
+    &.feedbackDiv {
+      .formDiv {
+        border-style: solid;
+        border-width: 2px;
+        border-image: linear-gradient(
+            126.04deg,
+            #8750f7,
+            rgba(255, 255, 255, 0)
+          )
+          1;
+        background: #36204b26;
+        padding: 2rem;
+        .userInputs {
+          display: grid;
+          gap: 20px;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          margin-bottom: 1rem;
+        }
+        .ui input {
+          background: #36204b26;
+          border: none;
+          padding: 8px;
+          border-radius: 8px;
+          color: #fff;
+          font-family: Sora;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20.16px;
+          text-align: left;
+          width: 270px;
+        }
+        .userMessage input {
+          height: 200px;
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        .submitBtn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 24px;
+          padding: 0 16px;
+          border: #8750f7 solid 1px;
+          height: 42px;
+          width: 140px;
+          .btnText {
+            margin-right: 8px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 15px;
+            letter-spacing: 1px;
+            text-align: center;
+          }
+        }
+      }
+      .contactsDiv {
+      }
+    }
+  }
+}
