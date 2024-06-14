@@ -1,11 +1,14 @@
 .mainBackground {
-  background-color: #0f0715;
+  background-image: url("../../assets/images/background.svg");
   height: 100vh;
   display: flex;
   justify-content: center;
+  width: 100%;
+  background-size: cover;
 }
 .mainbody {
-  width: 1340px;
+  width: 69.8vw;
+  min-width: 1100px;
 }
 .headerDiv {
   display: flex;
@@ -51,31 +54,31 @@
   .infoAndImgDiv {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     .infoDiv {
-      // width: 700px;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
       .nameDiv {
-        font-size: 36px;
+        font-size: 1.875vw;
         font-weight: 700;
         line-height: 54px;
         text-align: left;
-        margin-bottom: 1rem;
+        margin-bottom: 12px;
       }
       .roleDiv {
-        font-size: 65px;
+        font-size: 3.38vw;
         font-weight: 700;
         line-height: 81.9px;
         text-align: left;
         background: linear-gradient(90deg, #8750f7 0%, #ffffff 100%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        margin-bottom: 2rem;
+        margin-bottom: 16px;
       }
       .objectiveDiv {
-        font-size: 20px;
+        font-size: 1.041vw;
         font-weight: 400;
         line-height: 30px;
         text-align: left;
@@ -137,7 +140,7 @@
         }
       }
       .info2 {
-        margin-top: 5rem;
+        margin-top: 7rem;
         display: flex;
         .experienceBox {
           display: flex;
@@ -162,53 +165,83 @@
     }
   }
 }
-
+.imgDiv {
+  width: 24.84vw;
+  img {
+    width: 100%;
+  }
+}
 .slider {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
   height: 500px;
-  width: 680px;
+  width: 34.33vw;
+  min-width: 640px;
   .slide {
     height: 800px;
-    width: 650px;
+    &.myworksDiv {
+      width: 33.85vw;
+      min-width: 600px;
+    }
+    &.myexpDiv {
+      width: 31.35vw;
+      min-width: 470px;
+    }
+    &.myskillsDiv {
+      width: 30.62vw;
+      min-width: 500px;
+    }
+    &.feedbackDiv {
+      width: 33.1vw;
+      min-width: 600px;
+    }
     .slideHead {
       background: linear-gradient(90deg, #8750f7 0%, #ffffff 100%);
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
-      font-size: 45px;
+      font-size: 2.347vw;
       font-weight: 700;
       line-height: 54px;
       text-align: left;
       margin-bottom: 1rem;
     }
     .slideInfoDiv {
-      font-size: 16px;
+      font-size: 0.83vw;
       font-weight: 400;
       line-height: 24px;
       margin-bottom: 1rem;
     }
-
     .slideContentDiv.myworksDiv {
       display: grid;
       gap: 10px;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(16.25vw, 1fr));
+      overflow-y: scroll;
+      height: 380px;
       .projectCard {
         .projectImg {
-          border-style: solid;
-          border-width: 2px;
-          border-image: linear-gradient(
-              126.04deg,
-              #8750f7,
-              rgba(255, 255, 255, 0)
-            )
-            1;
           margin: 1rem;
           padding: 1rem;
           .projectImgInner {
-            background-color: #481010;
-            width: 250px;
-            height: 250px;
+            &::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              border-radius: 15px;
+              border: 2px solid transparent;
+              background: linear-gradient(
+                  126.04deg,
+                  #8750f7,
+                  rgba(255, 255, 255, 0)
+                )
+                border-box;
+              mask: linear-gradient(#fff 0 0) padding-box,
+                linear-gradient(#fff 0 0);
+              mask-composite: exclude;
+            }
+            background-color: rgba(54, 32, 75, 0.15);
+            backdrop-filter: blur(5px);
+            height: 240px;
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
@@ -276,26 +309,38 @@
 
         .expDiv {
           padding: 1rem;
-          border-style: solid;
-          border-width: 1px;
-          border-image: linear-gradient(
-              126.04deg,
-              #8750f7,
-              rgba(255, 255, 255, 0)
-            )
-            1;
-          border-radius: 12px;
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            background: linear-gradient(
+                126.04deg,
+                #8750f7,
+                rgba(255, 255, 255, 0)
+              )
+              border-box;
+            mask: linear-gradient(#fff 0 0) padding-box,
+              linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+          }
+          flex-grow: 1;
+          background-color: rgba(54, 32, 75, 0.15);
+          backdrop-filter: blur(5px);
           .expDate {
-            font-size: 20px;
+            font-size: 1.04vw;
             font-weight: 400;
             color: #8750f7;
+            margin-bottom: 8px;
           }
           .expRole {
-            font-size: 25px;
+            font-size: 1.3vw;
             font-weight: 700;
+            margin-bottom: 8px;
           }
           .expCompAndLoc {
-            font-size: 16px;
+            font-size: 0.83vw;
             font-weight: 400;
             line-height: 24px;
           }
@@ -304,31 +349,43 @@
     }
     .slideContentDiv.myskillsDiv {
       display: grid;
-      gap: 30px;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+      grid-template-columns: repeat(auto-fill, minmax(9.3vw, 1fr));
       .skillCard {
         display: flex;
         flex-direction: column;
         align-items: center;
         .skillIcon {
-          border-style: solid;
-          border-width: 2px;
-          border-image: linear-gradient(
-              126.04deg,
-              #8750f7,
-              rgba(255, 255, 255, 0)
-            )
-            1;
-          background: #36204b26;
-          width: 180px;
-          height: 180px;
+          &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            background: linear-gradient(
+                126.04deg,
+                #8750f7,
+                rgba(255, 255, 255, 0)
+              )
+              border-box;
+            mask: linear-gradient(#fff 0 0) padding-box,
+              linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+          }
+          background-color: rgba(54, 32, 75, 0.15);
+          backdrop-filter: blur(5px);
+          width: 9.37vw;
+          height: 9.37vw;
           display: flex;
           align-items: center;
           justify-content: center;
           margin-bottom: 16px;
+          img {
+            width: 4.16vw;
+          }
         }
         .skillName {
-          font-size: 24px;
+          font-size: 1.25vw;
           font-weight: 400;
           line-height: 24px;
           text-align: center;
@@ -337,26 +394,34 @@
     }
     &.feedbackDiv {
       .formDiv {
-        border-style: solid;
-        border-width: 2px;
-        border-image: linear-gradient(
-            126.04deg,
-            #8750f7,
-            rgba(255, 255, 255, 0)
-          )
-          1;
-        background: #36204b26;
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   inset: 0;
+        //   border-radius: 15px;
+        //   border: 2px solid transparent;
+        //   background: linear-gradient(
+        //       126.04deg,
+        //       #8750f7,
+        //       rgba(255, 255, 255, 0)
+        //     )
+        //     border-box;
+        //   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        //   mask-composite: exclude;
+        // }
+        background-color: rgba(54, 32, 75, 0.15);
+        backdrop-filter: blur(5px);
         padding: 2rem;
         .userInputs {
           display: grid;
           gap: 20px;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
           margin-bottom: 1rem;
         }
         .ui input {
           background: #36204b26;
           border: none;
-          padding: 8px;
+          padding: 8px 12px;
           border-radius: 8px;
           color: #fff;
           font-family: Sora;
@@ -364,12 +429,22 @@
           font-weight: 400;
           line-height: 20.16px;
           text-align: left;
-          width: 270px;
+          width: calc(100% - 16px);
         }
-        .userMessage input {
-          height: 200px;
-          width: 100%;
+        .userMessage textarea {
+          height: 150px;
           margin-bottom: 1rem;
+          background: #36204b26;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 8px;
+          color: #fff;
+          font-family: Sora;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 20.16px;
+          text-align: left;
+          width: calc(100% - 16px);
         }
         .submitBtn {
           display: flex;
@@ -395,4 +470,15 @@
       }
     }
   }
+}
+/* Add your styles here */
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.ui input.ng-touched.ng-invalid,
+.ui textarea.ng-touched.ng-invalid {
+  border-color: red;
 }

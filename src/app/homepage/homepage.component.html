@@ -13,7 +13,6 @@
         >
           <a href="{{ item.linkName }}">{{ item.name }}</a>
         </div>
-        <!-- <div class="headerButton hirebtn">Hire me!</div> -->
       </div>
     </div>
     <div class="bodyDiv">
@@ -117,24 +116,106 @@
                 "I create elegantly simple designs through coding and am
                 passionate about my work. It's just that straightforward!"
               </div>
-              <div class="userInputs">
-                <div class="ui">
-                  <input type="text" placeholder="First name" />
+              <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+                <div class="userInputs">
+                  <div class="ui">
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      formControlName="firstName"
+                    />
+                    <div
+                      *ngIf="
+                        contactForm?.get('firstName')?.invalid &&
+                        contactForm?.get('firstName')?.touched
+                      "
+                      class="error-message"
+                    >
+                      First name is required.
+                    </div>
+                  </div>
+                  <div class="ui">
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      formControlName="lastName"
+                    />
+                    <div
+                      *ngIf="
+                        contactForm?.get('lastName')?.invalid &&
+                        contactForm?.get('lastName')?.touched
+                      "
+                      class="error-message"
+                    >
+                      Last name is required.
+                    </div>
+                  </div>
+                  <div class="ui">
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      formControlName="email"
+                    />
+                    <div
+                      *ngIf="
+                        contactForm?.get('email')?.invalid &&
+                        contactForm?.get('email')?.touched
+                      "
+                      class="error-message"
+                    >
+                      <div
+                        *ngIf="contactForm?.get('email')?.errors?.['required']"
+                      >
+                        Email is required.
+                      </div>
+                      <div *ngIf="contactForm?.get('email')?.errors?.['email']">
+                        Invalid email address.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui">
+                    <input
+                      type="tel"
+                      placeholder="Phone number"
+                      formControlName="phone"
+                    />
+                    <div
+                      *ngIf="
+                        contactForm?.get('phone')?.invalid &&
+                        contactForm?.get('phone')?.touched
+                      "
+                      class="error-message"
+                    >
+                      <div
+                        *ngIf="contactForm?.get('phone')?.errors?.['required']"
+                      >
+                        Phone number is required.
+                      </div>
+                      <div
+                        *ngIf="contactForm?.get('phone')?.errors?.['pattern']"
+                      >
+                        Phone number must be 10 digits.
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="ui">
-                  <input type="text" placeholder="Last name" />
+                <div class="ui userMessage">
+                  <textarea
+                    placeholder="Message"
+                    formControlName="message"
+                  ></textarea>
+                  <div
+                    *ngIf="
+                      contactForm?.get('message')?.invalid &&
+                      contactForm?.get('message')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Message is required.
+                  </div>
                 </div>
-                <div class="ui">
-                  <input type="email" placeholder="Email address" />
-                </div>
-                <div class="ui">
-                  <input type="phone" placeholder="Phone number" />
-                </div>
-              </div>
-              <div class="ui userMessage">
-                <input type="text" placeholder="Message" />
-              </div>
-              <div class="submitBtn">Send Message</div>
+                <button type="submit" class="submitBtn">Send Message</button>
+              </form>
             </div>
             <div class="contactsDiv"></div>
           </div>
